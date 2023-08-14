@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Guia introdutório à linguagem python</h1>
+        <p>
+            A ideia deste guia não é ser um curso completo de python, mas sim uma espécie de dicionário,
+            apresentando como a linguagem funciona, sua sintaxe e alguns metodos que são úteis no uso do python.
+        </p>
+    </header>
+    <main>
+        <h1>Python</h1>
+            <p>
+                O python é uma linguagem interpretada, o que significa que ela precisa de um interpretador para que funcione.
+                Interfaces de Desenvolvimento(IDE), funcionam como interpretadores para a linguagem python, por exemplo o <a href="https://www.jetbrains.com/pycharm/download/?section=windows" target="_blank">Pycharm</a>
+                fornecido pela JetBrains, o <a href="https://jupyter.org/try" target="_blank">jupyter notebook</a>, que na verdade não é exatamente uma IDE porém isso não é relevante agora.
+                O importante é ter em mente que o python é usado em conjunto com uma ferramenta externa, diferente da linguagem C que é compilada, o que significa que ela funciona nativamente no sistema operacional.
+                Porém, graças a simplicidade do python, é possível contornar esse problema de algumas formas, veremos isso mais à frente, mas agora vamos de fato
+                começar a ver a sintaxe da linguagem python.
+            </p>
+        <h2>
+            Estrutura de Dados parte 1
+        </h2>
+            <p>
+                A estrutura de dados de uma linguagem é a forma como podemos diferenciar o que queremos dizer para o computador. Por
+                exemplo no português, se quisermos escrever uma frase com o intuito de ser uma pergunta, devemos usar o ponto de interrogação ao final da frase(?), 
+                do contrário a nossa mensagem não será clara, por exemplo:
+                <ul>
+                    <li>Você vai à casa do João.</li>
+                    <li>Você vai à casa do João?</li>
+                </ul>
+                O primeiro exemplo foi uma afirmação, já o segundo foi de fato uma pergunta, isto só pode ser identificado graças ao sinal de pontuação no final da frase.
+            </p>
+            <p>
+                Agora que eu acredito que tenha ficado mais claro, vamos ver a estrutura de dados do python.
+            </p>
+        <h3>String</h3>
+            <p>O tipo "String" ou só "str" é um tipo bastante básico, esse tipo se refere aos dados que indicam <span>textos</span>, como
+                por exemplo: casa, Marcos, água, lua, sabonete... Textos no geral. A forma de se declarar uma <abbr title="espaços alocados dentro da memória RAM destinados a armazenar algum valor">variável</abbr> do tipo <span>String</span>
+                é usando aspas simples('') ou aspas duplas("") no valor da variável
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">nome </span> = "Anderson"
+                        </p>
+                        <p>
+                            <span class="marca3">rua</span> = "Pinheiros"
+                        </p>
+                        <p>
+                            <span class="marca3">trabalho</span> = "bancário"
+                        </p>
+                    </div>
+            </section>
+            
+        <h3>
+            Int
+        </h3>
+            <p>
+                O tipo "int" é um tipo que se refere aos valores numericos inteiros, ou seja são os números
+                que fazem parte do conjunto dos <span>inteiros</span> (Z) dentro da matemática. A forma de 
+                declarar um <span>int</span> é atribuindo um valor númerico à variável. 
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">idade</span> = 29
+                        </p>
+                        <p>
+                            <span class="marca3">peso</span> = 86
+                        </p>
+                        <p>
+                            <span class="marca3">salario</span> = 1550
+                        </p>
+                    </div>
+            </section>
+        <h3>
+            Float
+        </h3>
+            <p>
+                O tipo "flutuante" ou "float" atua de forma parecida com o tipo "int", ambos servem para a atribuição de
+                valores numericos. A diferença entre o tipo int e o tipo <span>float</span> é que o <span>float</span> se trata de números do conjunto
+                <span>racional</span>(Q), ou seja os números decimais. A forma de declarar uma variável do tipo float é usando valores decimais com o "." 
+                em vez da ",".
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">tamanho</span> = 56.7
+                        </p>
+                        <p>
+                            <span class="marca3">peso</span> = 91.6
+                        </p>
+                        <p>
+                            <span class="marca3">preco</span> = 3745.90
+                        </p>
+                    </div>
+            </section>
+        <h3>
+            Bool
+        </h3>
+            <p>
+                O tipo "booleano" ou só "bool" se trata de dois valores apenas, <span>verdadeiro</span> e <span>falso</span>, este tipo é bastante usado 
+                quando desejamos realizar operações envolvendo estruturas condicionais, que também veremos mais à frente. A forma de declarar uma variável
+                do tipo <span>bool</span> é usando "True" para verdadeiro, ou "False" para falso.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">ligado</span> = True
+                        </p>
+                        <p>
+                            <span class="marca3">desligado</span> = False
+                        </p>
+                        <p>
+                            <span class="marca3">pausado</span> = True
+                        </p>
+                    </div>
+            </section>
+        <p>
+            A princípio, estes são os tipos de dados que realmente usaremos por enquanto, ainda neste guia você verá
+            tipos mais complexos, porém eles são apenas extensões destes já apresentados.
+        </p>
+        <h2>
+            Funções parte 1
+        </h2>
+            <p>
+                Agora que você já entende como funciona a estrutura de dados do python, podemos ir ao segundo ponto deste guia, as funções.
+            </p>
+            <p>
+                As funções são a parte mais básica da programação, elas são usadas para simplificar as tarefas de um algoritmo. A primeira função
+                que vemos quando vamos aprender a programar, normalmente é a função de impressão na tela, no python ela é a função <i>Print()</i>
+            </p>
+            <h3>
+                print()
+            </h3>
+            <p>
+                A função <span>print()</span> é uma função muito simples, tudo o que ela faz é escrever no terminal o que for escrito dentro dos parênteses,
+                no etntando, devemos nos atentar aos tipos de dados que serão usados na função, já que existem formas certas de escrever tipos diferenter em uma 
+                mesma chamada da função <span>print()</span>. Mas vamos começar do simples, escrevendo "Olá, mundo!". Para realizar esta icônica tarefa, basta
+                inciar uma instância do python, ou seja criar um arquivo python no ambiente de desenvolvimento de sua preferência, e digitar "Olá, mundo!" na função
+                print()
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">print</span>("Olá, mundo!")
+                        </p>
+                    </div>
+                    tente <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">online</a>
+            </section>
+            <p>
+                Caso quisermos juntar dois tipos de dados em uma mesma chamada da função, podemos fazer de algumas formas, aqui iremos aprender a forma fString. Ela é feita
+                usando a letra "f" antes do dado string, e o dado string deverá conter "{}" para indicar a mudança de dado.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">print</span>(f"Eu tenho {16} anos")
+                        </p>
+                    </div>
+                    tente <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">online</a>
+            </section>
+            <p>
+                Caso este metódo não pareça útil agora, vamos ver uma nova função que demonstrará a utilidade das fString's.
+            </p>
+            <h3>
+                input()
+            </h3>
+            <p>
+                A função <span>input()</span> é uma função de armazenamento de valores, a melhor forma de uza-la é atribuindo-a a uma
+                variável, vamos exemplificar. 
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">val</span>= input("valor: ")
+                        </p>
+                    </div>
+            </section>
+            <p>
+                Neste exemplo, a variável <span>val</span> recebe a função input() com o texto "valor: " dentro da função. O <span>usuário</span>
+                deverá digitar um valor dentro da função que será armazenado na <span>variável</span> <span>val</span>. Podemos agora usar a variável em 
+                conjunto com a função <span>print()</span>
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">val</span>= input("valor: ")
+                        </p>
+                        <p>
+                            <span class="marca3">print</span>(f"o valor é{val}")
+                        </p>
+                    </div>
+                    tente <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">online</a>
+            </section>
+            <p>
+                Caso queira, também é possível restringir o tipo de dado armazenado na função <span>input()</span>, para isso
+                basta escrever o tipo de dado desejado para a resposta antes da função <span>input()</span>, caso o tipo de dado inserido
+                seja diferente do tipo aceito pela variável, haverá erro.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">val</span>= str(input("valor: "))
+                        </p>
+                        <p>
+                            <span class="marca3">print</span>(f"o valor é{val}")
+                        </p>
+                    </div>
+            </section>
+            <p>
+                Porém, caso você use o tipo <span>str</span> e insira um número, tudo acontecerá normalmente sem erros, isso
+                porque ao digitar um número em uma string, o número se comportará como um texto. Um bom exemplo de verificar isso é usando operações matemáticas,
+                nós veremos os <span>Operadores lógicos</span> em seguida.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">val1</span>= int(input("valor 1: "))
+                        </p>
+                        <p>
+                            <span class="marca3">val2</span>= int(input("valor 2: "))
+                        </p>
+                        <p>
+                            <span class="marca3">print</span>(f"a soma é {val1+val2}")
+                        </p>
+                    </div>
+            </section>
+            <p>
+                Neste exemplo, pedimos dois valores para o usuário e ao final exibimos uma mensagem com o resultado da soma dos dois valores
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">val1</span>= 5
+                        </p>
+                        <p>
+                            <span class="marca3">val2</span>= 11
+                        </p>
+                        <p>
+                            <span class="marca3">resultado: </span>16
+                        </p>
+                    </div>
+            </section>
+            <p>
+                Caso tivessemos usado o tipo <span>str</span> no lugar <span>int</span> na declaração da
+                variável, teriamos um resultado diferente
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">val1</span>= 5
+                        </p>
+                        <p>
+                            <span class="marca3">val2</span>= 11
+                        </p>
+                        <p>
+                            <span class="marca3">resultado: </span> 511
+                        </p>
+                    </div>
+            </section>
+            <p>
+                Isso porque como os números passam a se comportar como textos, a soma de dois textos simplismente realiza 
+                uma <a href="https://www.dicio.com.br/concatenacao/" target="_blank">concatenação</a> das palavras.
+            </p>
+            <p>
+                Antes de prosseguirmos, vamos ver o que são os operadores matemáticos e lógicos da linguagem.
+            </p>
+        <h2>
+            Operadores
+        </h2>
+            <p>
+                Os operadores servem para várias funções e podem ser usados de diversas formas. Vamos começar com os operadores
+                matemáticos 
+            </p>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                        <th>Operador</th>
+                        <th>Significado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>+</td>
+                        <td class="td">Realiza a operação de soma ou de concatenação</td>
+                        </tr>
+                        <tr>
+                        <td>-</td>
+                        <td class="td">Realiza a operação de subtração</td>
+                        </tr>
+                        <tr>
+                        <td>/</td>
+                        <td class="td">Realiza a operação de divisão</td>
+                        </tr>
+                        <tr>
+                        <td>*</td>
+                        <td class="td">Realiza a operação de multipicação</td>
+                        </tr>
+                        <tr>
+                        <td>//</td>
+                        <td class="td">Realiza a operação de divisão inteira</td>
+                        </tr>
+                        <tr>
+                        <td>%</td>
+                        <td class="td">Realiza uma operação de divisão inteira e retorna o resto da divisão</td>
+                        </tr>
+                        <tr>
+                        <td>**</td>
+                        <td class="td">Realiza uma operação de potênciação</td>
+                        </tr>
+                        <tr>
+                            <td>tente</td>
+                            <td class="td"><a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">online</a></td>
+                        </tr>
+                    </tbody>
+                
+                </table>
+            </section>
+            <h3>Operadores comparativos</h3>
+            <p>
+                Os operadores comparativos servem, como o nome já diz, para realizar comparações entre termos, veja a seguir.
+            </p>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operador</th>
+                            <th>Significado</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&#62;</td>
+                            <td class="td">Maior que</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;</td>
+                            <td class="td">Menor que</td>
+                        </tr>
+                        <tr>
+                            <td>>=</td>
+                            <td class="td">Maior ou igual</td>
+                        </tr>
+                        <tr>
+                            <td>&#60;=</td>
+                            <td class="td">Menor ou igual</td>
+                        </tr>
+                        <tr>
+                            <td>!=</td>
+                            <td class="td">Diferente</td>
+                        </tr>
+                        <tr>
+                            <td>==</td>
+                            <td class="td">Igual</td>
+                        </tr>
+                </table>
+            </section>
+            <p>
+                Os operadores comparativos normalmente são usados em conjunto dos operadores lógicos, que são
+                extremamente importantes na flexibilidade dos algoritmos do python.
+            </p>
+            <h3>
+                Operadores lógicos
+            </h3>
+            <p>
+                Os operadores lógicos são um pouco mais complexos em sua utilidade, mas nada para se preocupar. Eles servem
+                para abrir brechas nas funções de um código, eles são:
+            </p>
+            <section>
+                <table>
+                <thead>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Significado</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>if</td>
+                        <td class="td">Se</td>
+                    </tr>
+                    <tr>
+                        <td>else</td>
+                        <td class="td">Se não</td>
+                    </tr>
+                    <tr>
+                        <td>elif</td>
+                        <td class="td">Se não se</td>
+                    </tr>
+                </tbody>
+                </table>
+            </section>
+            <p>
+                Os operadores lógicos servem para criar bifurcações em um código, onde o if(se), é bastante
+                intuitivo em seu uso, se uma condição for <span class="verdade">verdadeira</span>, o bloco de comandos do if
+                será executado. <br>
+                No caso do else(se não), se a condição presente no if for <span class="falso">falsa</span>, o comando executado será o contido no bloco
+                else.
+            </p>
+            <section>
+                <img src="imagens/Captura de Tela 1.png" alt="exemplo" class="if">
+            </section>
+            <p>
+                Neste exemplo o a variável <span style="color: rgb(4, 200, 207);">valor</span> tem valor igual a 16,
+                ou seja, a condição do if é <span class="verdade">verdadeira</span>, logo o bloco if 
+                foi executado.
+            </p>
+            <section>
+                <img src="imagens/Captura de Tela (2).png" alt="exemplo" class="if">
+            </section>
+            <p>
+                Já neste exemplo, fizemos uso da função <span>input()</span> para receber o nome do usuário, 
+                caso o nome fosse "Matias", o programa iria executar o bloco do if, pois ele seria verdadeiro, porém
+                o nome digitado pelo usuário foi "Jonas", nesse caso o if se tornou <span class="falso">falso</span>, 
+                logo o codigo executou o bloco else.
+            </p>
+            <section>
+                <img src="imagens/Captura de Tela (3).png" alt="exemplo" class="if">
+            </section>
+            <p>
+                Neste exemplo, fizemos um programa simples para realizar a análise de voto de uma pessoa usando
+                sua idade como parâmetro para votação segundo a legislação brasileira, ou seja, se uma pessoa tem mais 
+                de 16 anos e menos de 18 anos, 70 anos ou mais, o voto dessa pessoa é opcional. Já se alguém tem menos de 
+                16 anos, essa pessoa não pode votar, e se alguém tem mais de 18 e menos de 70, seu voto é obrigatório. <br>
+                Pensando nisso, o nosso programa faz a análise do número digitado pelo usuário e:
+            </p>
+            <ul>
+                <li>Se for menor de 16 anos, não pode votar</li>
+                <li>Se for maior que 18 anos e menor que 70 anos, seu voto é obrigatório</li>
+                <li>Caso não se encaixe em nenhum dos dois, seu voto será opcional.</li>
+            </ul>
+            <p>
+                Se você tem menos de 18 e mais de 16, você não se encaixa no if e nem no elif(estrutura usada quando queremos mais de duas possibilidades no programa),
+                logo você se encaixa no else. Já se você não tem menos de 70 anos, significa que você tem mais de 70, o if e o elif
+                são para quem tem menos de 70, e você por não ter menos de 70, é jogado no bloco else.
+            </p>
+           <p>
+            Agora que já vimos como funcionam os operadores, pelo menos a maior parte deles, tente resolver alguns <a href="exercicios.html">exercícios</a> para fixar o que você viu até agora.
+           </p>
+        <h2>
+            Estrutura de Dados parte 2 
+        </h2>
+            <p>
+                Eu acrédito que você realizou alguns exercícios por conta prória, não é? <br>
+                Mas bem, agora veremos a segunda parte das estruturas de dados.
+            </p>
+            <h3>Listas</h3>
+                <p>
+                    Uma lista é uma estrutura mais robusta que uma simples variável. Enquanto uma
+                    variável aramazena apenas um valor, as listas no python podem armazenar quantos valores
+                    a sua memória conseguir suportar. As listas no python são declaradas usando colchetes no valor 
+                    da variável.
+                </p>
+                
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">lista </span>= <span class="lista">[]</span>
+                        </p>
+            </section>
+            <p>
+                Neste exemplo, criamos uma lista vazia, para criar uma lista com valores, basta inserir os valores
+                dentro dos colchetes separando-os por ","
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">lista </span>= <span class="lista">["Arroz","Carne","Alface"]</span>
+                        </p>
+            </section>
+            <p>
+                Neste exemplo, criamos uma lista com valores do tipo <span>str</span>, porém não é obrigatório que todos 
+                os itens de uma lista tenham o mesmo tipo de dado. No python podemos misturar os tipos dentro de uma lista.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">lista </span>= <span class="lista">[12,"Uva",5.1,True]</span>
+                        </p>
+            </section>
+            <p>
+                Aqui temos uma lista com 4 tipos diferentes de dados, isso em linguagens como C ou Java é um crime, mas o python permite 
+                essa mistura. Também é possível armazenar variáveis dentro das listas. 
+            </p> 
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">nome</span> = "Lucas"
+                        </p>
+                        <p>
+                            <span class="marca3">idade</span> = 13
+                        </p>
+                        <p>
+                            <span class="marca3">lista </span>= <span class="lista">[nome,idade]</span>
+                        </p>
+            </section>
+            <p>
+                Agora que já entendemos como criar uma lista, veremos algumas particularidades que as listas possuem
+                a começar pelos índices. 
+                Para acessarmos um item de uma lista, devemos saber qual é a posição dele na lista. As posições começam no índice <span>0</span>
+                e se estendem até o ultimo item. Em uma lista com <span>5</span> itens, o primeiro item terá o índice <span>0</span>, e o ultimo
+                terá índice <span>4</span>. Caso esteja difícil de realmente entender, vamos usar alguns exemplos práticos.  
+            </p>
+            <section>
+                <img src="imagens/Captura de Tela (4).png" alt="exemplo" class="if">
+            </section>
+            <p>
+                Temos uma lista chamada "lista" com 5 itens do tipo string, e pedimos através da função <span>print</span>
+                que fosse exibido o item no terminal.
+            </p>
+            <p>
+                Existem várias formas de usar as listas e seus itens. Vamos ver algumas possibilidades e metodos possíveis 
+                agora
+            </p>
+            <section>
+                <span class="ex2">Somando dois itens da lista</span>
+                <img src="imagens/Captura de Tela (5).png" alt="exemplo" class="if">
+                <span class="ex2">Tipo de dado do item</span>
+                <img src="imagens/Captura de Tela (6).png" alt="exemplo" class="if">
+                <span class="ex2">Adicionando um novo item a lista</span>
+                <img src="imagens/Captura de Tela (7).png" alt="exemplo" class="if">
+                <cite>Os dois pontos (:) dentro dos colchetes significa que queremos todos os valores, do primeiro
+                    ao ultimo.
+                </cite> <br>
+                <span class="ex2">Removendo o ultimo item da lista</span>
+                <img src="imagens/Captura de Tela (8).png" alt="exemplo" class="if">
+                <span class="ex2">Revertendo a ordem dos itens</span>
+                <img src="imagens/Captura de Tela (9).png" alt="exemplo" class="if">
+                <span class="ex2">Removendo um item específico da lista</span>
+                <img src="imagens/Captura de Tela (11).png" alt="exemplo" class="if">
+                <span class="ex2">Exibindo o indíce do item dentro da lista</span>
+                <img src="imagens/Captura de Tela (12).png" alt="exemplo" class="if">
+                <cite>Lembre-se que o a contagem começa do zero(0) e não do um(1)</cite> <br>
+                <span class="ex2">Limpando a lista</span>
+                <img src="imagens/Captura de Tela (13).png" alt="exemplo" class="if">
+                <span class="ex2">Ordenando a lista do menor para o maior</span>
+                <img src="imagens/Captura de Tela (15).png" alt="exemplo" class="if">
+                <span class="ex2">Exibindo itens da lista</span>
+                <img src="imagens/Captura de Tela (16).png" alt="exemplo" class="if">
+                <cite>Neste ultimo exemplo, pedimos para que fossem exibidos os itens do indíce 1 até
+                    o indíce 4, mas se você prestou atenção, viu que foram exibidos os itens de indíce 1 até
+                    3. Isso aconteceu porque o python ignora o ultimo indíce de uma chamada, ou seja ele sempre
+                    vai até o penultimo item. Para corrigir isso basta usar um indíce maior que o desejado em uma unidade.
+                </cite>
+            </section>
+            <p>
+                Ainda no assunto das listas, outra coisa que também podemos fazer é colocar uma lista dentro da
+                outra, criando assim, uma matriz. Veja alguns exemplos de como isso funciona.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">lista </span>= <span class="lista">[[10,11,12],[5,6,9]]</span>
+                        </p>
+            </section>
+            <p>
+                Aqui nós temos uma lista que contem duas listas dentro dela, a primeira tem os valores:10, 
+                11 e 12. A segunda tem os valores: 5, 6 e 9. Para acessarmos um valor dentro de uma das listas
+                devemos usar as posições específicas. por exemplo caso quisermos acessar o valor <span>11</span>
+                contido na primeira lista, podemos fazer: lista[0][1]
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">lista </span>= <span class="lista">[[10,11,12],[5,6,9]]</span>
+                        </p>
+                    </div>
+                    <img src="imagens/Captura de Tela (18).png" alt="exemplo" class="if">
+            </section>
+            <p>
+                Ou seja, o primeiro colchete representa o indíce da lista que queremos, o segundo representa
+                o indíce do item que queremos dentro da lista. Caso quisessemos o número 5, fariamos: lista[1][0].
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">lista </span>= <span class="lista">[[10,11,12],[5,6,9]]</span>
+                        </p>
+                    </div>
+                    <img src="imagens/Captura de Tela (19).png" alt="exemplo" class="if">
+            </section>
+            <p>
+                Também podemos declarar as listas antes e usa-las como variáveis dentro da lista maior
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                <img src="imagens/Captura de Tela (20).png" alt="exemplo" class="if">
+            </section>
+            <p>
+                Agora realize alguns <a href="exercicios.html">exercícios</a> para fixar o que você viu até agora e em seguida
+                partiremos para os laços de repetições.
+            </p>
+        <h2>
+            Loops
+        </h2>
+            <p>
+                Os <span>laços de repetições</span>(loops), são estruturas que servem para repetir proçessos que podem ser
+                cansativos ou massivos usando parâmetros parecidos com o <span>if</span>, <span>else</span> e <span>elif</span>.
+                Ou seja, enquanto a condição dentro dos laços forem verdadeiras, eles realizarão a função, isso ficará mais claro logo logo.
+                No python temos dois tipos de laços, <span>for</span> e <span>while</span>.
+            </p>
+            <h3>For</h3>
+                <p>
+                    O laço do tipo <span>for</span> pode ser interpretado como "para cada", ou seja, para cada verdade 
+                    dentro da condição, realize a tarefa. 
+                </p>
+                <section id="for">
+                    <span class="ex">Exemplos</span>
+                    <table class="for">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (21).png" alt="exemplo" class="if">
+                            </td>
+                            <td class="td1">Aqui nós criamos um laço <span>for</span> e demos uma variável para que sirva como parâmetro na execução do
+                            código, a variável <span>i</span> irá receber os valores no intervalo de 0 até 9, pois como explicamos antes
+                            o python desconsidera o ultimo valor (10). Em seguida pedimos para exibir o valor de <span>i</span>, que começou no <span>zero</span>
+                            e foi se atualizando no decorrer do laço, ou seja, recebendo os valores seguintes. Quando não é mais possível
+                            atualizar o valor de <span>i</span> devido termos atingido o limite que usamos inicialmente, o bloco é encerrado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (22).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Aqui nós criamos um laço <span>for</span> e também demos uma variável para que sirva como parâmetro
+                                na execução do código, a variável <span>i</span> irá receber os <span>itens</span> da lista, do primeiro ao 
+                                ultimo a partir do primeiro. Ao receber um item como seu valor, a função <span>print</span> irá exibir o valor recebido
+                                e em seguida <span>i</span> será atualizado e recebrá o próximo item da lista até que a lista acabe.
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (23).png" alt="exemplo" class="if" style="height: 200px;">
+                            </td>
+                            <td>
+                                Neste caso, nós criamos um laço e também atribuimos uma variável como parâmetro,
+                                porém agora nós usamos a função <span>len()</span> para definir os valores para nossa
+                                variável. A função <span>len()</span> serve para indicar o tamanho de uma lista, ou seja
+                                quantos elementos ela possui. Trazendo isso para o nosso laço, na prática fizemos algo similar
+                                ao primeiro exemplo, porém aqui usamos o tamanho da lista(5) em vez de números pré definidos. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (25).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Aqui nós reaproveitamos a forma anterior, como a variável <span>i</span> recebe os indíces
+                                da lista e não os elementos, pedimos para que fosse exibido o indíce da lista que fosse correspondente 
+                                ao valor de <span>i</span>, e como o valor da variável é o mesmo do indíce da lista
+                                ele irá imprimir o item da lista de forma similar ao segundo exemplo mostrado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (26).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Aqui nós fizemos algo um pouco mais elaborado, uma simples taboada do número
+                                9, acredito que você já entendeu o funcionamento do laço <span>for</span> e da importância
+                                de atribuir uma variável ao laço. A nossa variável recebe o valores que definimos e vai se atualizado,
+                                a medida que isso acontece ela exibe a mensagem que pedimos ou seja: 9 x {o valor de i} = {9 vezes o valor de i}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (27).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Aqui já partimos para um uso melhor do laço, criamos uma variável e seus valores
+                                serão do 1 ao 20, porém 'pulando de 2 em 2'. Como ela começa no 1, 1+2 = 3, 3+2 = 5,
+                                5+2 = 7... até o limite de 20, ou seja <span>i</span> <span class="falso">não será atualizado 20 vezes</span>
+                                mas apenas 10 por causa da nossa condição de atualização (range(1,20,2)). Espero que isso tenha ficado claro,
+                                no decorrer do laço, pedimos que a nossa lista, inicialmente vazia, fosse recebendo o valor de <span>i</span> no
+                                decorrer de sua atualização. E ao terminar o laço, pedimos que fossem mostrados todos os itens da lista
+                                através da função <span>print</span>. Atente-se a <abbr title="um espaço no começo de uma linha escrita ou de um paragrafo">indentação</abbr>
+                                do código, pois se o print estivesse 'para dentro', a execução do código seria diferente. 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (28).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Este ultimo exemplo é um reaproveitamento do anterior para mostrar que podemos
+                                ter vários laços e que podem interagir com as mesmas coisas de formas diferentes.
+                                Aqui no primeiro laço nós adicionamos o valor de <span>i</span> na lista, no segundo laço
+                                temos a variável <span>j</span> que recebe o valor do total de elementos contidos na nossa lista(10)
+                                e a medida que o valor de <span>j</span> se atualiza o <span>ultimo</span> elemento da nossa lista é removido,
+                                note que o <span>j</span> não aparece dentro do bloco do laço, pois ele serve apenas como chave para o laço funcionar
+                                e não interage diretamente com os elementos do laço. Ao final da execução do segundo laço, pedimos que
+                                fossem exibidos os itens da lista, porém ela está vazia já que o nosso laço removeu o ultimo item de forma consecutiva(o penultimo se torna o ultimo e por aí vai...).
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </section>
+            <h3>While</h3>
+            <p>
+                Agora que vimos como o laço <span>for</span> funciona, entender o laço <span>while</span> não será complicado.
+                O laço while pode ser traduzido como "enquanto", assim como o for, ele recebe uma para ser iniciado e enquanto a condição
+                for verdadeira, ele ira repetir os comandos que forem passados. A melhor forma de aplicar o uso de cada laço é avaliando o limite
+                da condição, por exemplo sempre usamos o <span>for</span> quando sabemos onde começa e onde termina uma condição. Quando sabemos
+                onde uma condição começa, mas não sabemos onde ela termina é mais viável o uso do laço <span>while</span>, veremos alguns exemplos
+            </p>
+            <section id="for">
+                <span class="ex">Exemplos</span>
+                <table class="for">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (29).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Neste exemplo, nós criamos uma variável <span style="color: brown;">fora do laço</span>
+                                e atribuimos a ela o valor inicial de <span>0</span>, em seguida criamos um laço do tipo <span>while</span>
+                                e a sua condição foi de <span>condi</span> ser menor que 5, esse laço todo pode ser lido como "enquanto condi for menor que 5 faça:"
+                                e os comandos nesse laço são dois, o primeira é exibir o valor atual de <span>condi</span>, o segundo é <span>condi</span> receber o seu valor atual mais um(1),
+                                ou seja, o valor de <span>condi</span> será atualizado em uma unidade, enquanto ele não atinge o limite de 5. pois quando
+                                <span>condi</span> for igual a 5, a nossa condição será <span class="falso">falsa</span> logo o laço <span>while</span>
+                                será encerrado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (30).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Aqui nós criamos a variável <span>condi</span> e não artibuimos valor nenhum a ela, apenas 
+                                definimos que ela é do tipo <span>str</span> e a nossa condição do <span>while</span> pode ser lida como
+                                "enquanto condi for diferente da letra 'n', faça: ". E dentro do bloco do laço nós mudamos o valor de <span>condi</span>
+                                para um <span>input</span> do tipo <span>str</span> para que seja inserido uma letra como valor de <span>condi</span>, se a letra
+                                digitada for "n" a nossa condição se torna <span class="falso">falsa</span> e o laço é encerrado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (31).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Aqui nós reaproveitamos o exemplo anterior e fizemos algumas mudanças na condição do <span>while</span>. Criamos
+                                uma lista chamada "paradas" e nela colocamos itens que irão servir como condições de parada para o laço. <span>Condi</span>
+                                novamente se tornou um <span>input</span> onde o usuário deverá digitar qualquer coisa. Caso o usuário digite algo que esteja
+                                dentro da lista "paradas", o laço será encerrado pois ele pode ser lido como "enquanto a condição não for um dos itens da lista, faça: ".
+                                O usuário digitando uma palavra contida na lista fará a condição ser <span class="falso">falsa</span>, logo o laço será encerrado.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="imagens/Captura de Tela (32).png" alt="exemplo" class="if">
+                            </td>
+                            <td>
+                                Neste ultimo exemplo, nós não definimos uma condição de parada no <span>while</span>. Quando
+                                usamos um "True" como condição de parada, é como se estivessemos dizendo "Vai fazendo aí". Porém caso
+                                realmente não exista nada para quebrar o laço, ele será executado eternamente e dependendo do caso, o que quebra é a sua
+                                maquina. Mesmo sem ter uma condição de parada pré definida, existe sim uma condição, mas ela está dentro do próprio
+                                laço, o <span>break</span>. Nós pedimos que o usuário digitasse alguma coisa e usamos a estrutura <span>if</span> para 
+                                fazer uma análise do que foi digitado. Se o que o usuário digitar for "break", o comando break, contido na estrutura <span>if</span>, 
+                                será executado. O comando break serve para quebrar os laços independete de sua condição de parada inicial.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <p>
+                Com isso terminamos a parte de laços de repetição, tente resolver alguns <a href="exercicios.html">exercícios</a> para avaliar sua própria 
+                capacidade antes de partir para o próximo ponto deste guia.
+            </p>
+            <h2>Funções parte 2</h2>
+                <p>
+                    Anteriormente vimos algumas coisas a respeito das funções no python e também vimos como as
+                    funções podem interagir com listas e variáveis, e que elas servem para simplificar nosso código. 
+                    Agora veremos como podemos criar nossas próprias funções e simplificar mais ainda nossas criações. 
+                </p>
+            <h3>Comando def</h3>
+                <p>
+                    Para criarmos uma função no python, devemos inicia-la com o comando def, que significa "definição".
+                </p>
+                <section>
+                    <span class="ex">Exemplo</span>
+                        <div class="cpp">
+                            <p>
+                                <span class="marca3">def </span> <span class="lista">funcao</span>( ):
+                            </p>
+                </section>
+                <p>
+                    Os parênteses da função serevm para armazenar os parâmetros que usaremos, isso será menlhor explicado mais à frente.
+                    Por hora, não usaremos parâmeros em nossas funções. Similar as estruturas anteriores, deveremos escrever
+                    os comandos da nossa função de forma indentada, 'para dentro'. Vamos começar criando uma função que escreve "olá, mundo!" quando
+                    for chamada.
+                </p>
+                <section>
+                    <span class="ex">Exemplo</span>
+                        <img src="imagens/Captura de Tela (33).png" alt="exemplo" class="if">
+                </section>
+                <p>
+                    Para chamarmos uma função, basta escrever seu nome junto dos parênteses. Também é possível
+                    usar nossas funções em conjuno de laços de repetição e estruturas condicionais.
+                </p>
+                
+                <section>
+                    <span class="ex">Exemplo</span>
+                        <img src="imagens/Captura de Tela (34).png" alt="exemplo" class="if">
+                </section>
+                <p>
+                    No exemplo acima, foram criadas duas funções, uma tem a tarefa de escrever "olá, mundo!", 
+                    a outra escreve apenas "mundo" quando forem chamadas. Também criamos um laço do tipo <span>for</span>
+                    com estruturas <span>if</span> e <span>else</span>. Caso o valor da variável seja <span>0</span>, a função <span>ola()</span>
+                    será executada, caso não(else), a função <span>funcao()</span> será executada. Como <span>i</span> tem valor inicial de <span>0</span>, o bloco
+                    <span>if</span> será executado, pois sua condição será verdadeira. Após a execução do bloco <span>if</span> o valor de <span>i</span>
+                    foi atualizado, dessa forma, a condição do bloco <span>if</span> se torna falsa, logo o <span>else</span> é executado até o fim do laço(duas vezes).
+                </p>
+                <p>
+                    Nesse exemplo as funções usadas apenas executavam alguma ação, mas algo que podemos fazer com as funções é
+                    adicionar retorno a elas. Funções de retorno são mais comuns de serem usadas com parâmetros de chamada. Veja
+                    um exemplo de uma função simples de soma com retorno 
+                </p>
+                <section>
+                    <span class="ex">Exemplo</span>
+                        <img src="imagens/Captura de Tela (35).png" alt="exemplo" class="if">
+                </section>
+                <p>
+                    Nós criamos uma função chamada soma, e definimos que ela recebe 2 elementos na hora de sua chamada(<span>a</span> e <span>b</span>)
+                    esses elementos nada mais são do que variáveis sem valor, em seguida pedimos para que a função retornasse o <span>valor da soma entre a e b</span>.
+                    Na função <span>print</span> nós chamamos a função <span>soma</span> recebe os valores 8 para <span>a</span> e 16 para <span>b</span>
+                    dessa forma a função print irá exibir o valor de retorno da função soma, ou seja, a soma de 8 mais 16(24).
+                </p>
+                <p>
+                    Um problema que pode ocorrer ao usarmos funções com parâmetros, é esquecer de atender algum parâmetro, por exemplo veja o que 
+                    aconteceria caso não tivessemos definido o valor de <span>b</span> na chamada da função. 
+                </p>
+                <section>
+                    <span class="ex">Exemplo</span>
+                        <img src="imagens/Captura de Tela (36).png" alt="exemplo" class="if">
+                </section>
+                <p>
+                    Como podemos ver, houve erro na execução do programa justamente por não termos usado um valor para <span>b</span>.
+                    Uma forma eficaz de contornar isso é usando parâmetros opcionais na hora em que definimos uma função. Para fazer isso
+                    basta usarmos valores nulos ou neutros ainda na definição da função.
+                </p>
+                <section>
+                    <span class="ex">Exemplo</span>
+                        <img src="imagens/Captura de Tela (37).png" alt="exemplo" class="if">
+                </section>
+                <p>
+                    Usando valores neutros na definição de uma função, não corremos o risco de incoerência devido a falta de algum valor.
+                </p>
+                <p>
+                    Lembre-se que as funções devem ser criadas nas linhas que antecedem o seu primeiro chamado, ou seja, devem ser criadas
+                    antes de serem chamadas, duas funções não podem ter o mesmo nome e não podem conter caracteres especiais como: ç, õ, á... 
+                    Com isso, encerramos o assunto de funções, mas fique a disposição para realizar os <a href="exercicios.html">exercícios</a>.
+                </p>
+        <h2>Estrutura de dados parte 3</h2>
+            <p>
+                Nós já vimos as variáveis e seus tipos, também vimos as listas, agora vamos ver um novo tipo de dado, as <span>tuplas</span>. 
+                As tuplas funcionam de forma bem parecida com as listas, servem para armazenar vários elementos. No entanto existem 
+                grandes difereças entre as listas e as tuplas. A primeira delas é que <span>tuplas</span> são <span class="falso">imutáveis</span> no decorrer
+                da execução de um código. Depois de criadas, não é possível adicionar ou remover elementos de uma <span>tupla</span>, coisa que é possível de se fazer
+                nas listas. Para criarmos uma <span>tupla</span>, basta usar os parênteses em seu valor.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <div class="cpp">
+                        <p>
+                            <span class="marca3">tupla</span> = <span class="lista">("bolo","azeite","limão")</span>
+                        </p>
+                    </div>
+            </section>
+            <p>
+                Os unicos dois metodos(comuns) que podemos usar nas tuplas puras são: <span>.count()</span> e <span>.index()</span>; O .count() serve para
+                contar quantas vezes um elemento aparece, já o index() como você já deve saber, serve para saber a posição de um elemento.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <img src="imagens/Captura de Tela (38).png" alt="exemplo" class="if">
+                    <p>O bolo aparece apenas uma vez e a posição do azeite na tupla é um(1)</p>
+            </section>
+            <p>
+                Algo que podemos fazer para "modificar" uma <span>tupla</span> é copiar seus elementos para uma 
+                lista.
+            </p>
+            <section>
+                <span class="ex">Exemplo</span>
+                    <img src="imagens/Captura de Tela (39).png" alt="exemplo" class="if">
+                    <p>
+                        Os elementos da tupla são copiados para o valor de <span>i</span>, que por sua vez,
+                        é adicionado à lista pelo metodo <span>append()</span>
+                    </p>
+            </section>
+            <p>
+                Algumas coisas que fazemos com listas também podem ser feitas com as tuplas, como atribuir o valor
+                específico de uma tupla para uma variável, como fizemos com o laço <span>for</span> acima.
+            </p>
+        <h2>Dicionário</h2>
+        <p>
+            Entre os tipos de dados que abrigam mais de um valor, ou seja os vetores, os <span>dicionários</span> são os mais 
+            complexos. Um <span>dicionário</span> é similar a uma <span>lista</span> que abriga outras listas(uma matriz). Porém,
+            nos dicionários não são usados indíces numericos para acessar seus itens, mas sim as chaves e valores. Para criarmos um 
+            dicionário temos que usar "{}" em seu valor, mas as "{}" devem conter dois elementos dentro, a chave do item e o valor do item.
+        </p>
+        <section>
+            <span class="ex">Exemplo</span>
+                <div class="cpp">
+                    <p>
+                        <span class="marca3">dic</span> = <span class="lista">{"chave":"valor"}</span>
+                    </p>
+                    
+                </div>
+                <p>As chaves devem ser o primeiro elemento e devem estar entre aspas obrigatoriamente, em seguida
+                    usamos ":" para indicar o valor da chave, que pode ser qualquer tipo de dado(str, int, listas, tuplas...)
+                </p>
+        </section>
+        <p>
+            Vamos ver alguma possibilidades que os dicionários nos proporcionam
+        </p>
+        <section>
+            <span class="ex2">Exibindo todas as chaves do dicionário</span>
+            <img src="imagens/Captura de Tela (40).png" alt="exemplo" class="if">
+            <span class="ex2">Exibindo todos os valores do dicionário</span>
+            <img src="imagens/Captura de Tela (41).png" alt="exemplo" class="if">
+            <span class="ex2">Exibindo todos os itens do dicionário</span>
+            <img src="imagens/Captura de Tela (42).png" alt="exemplo" class="if">
+            <span class="ex2">Excluindo um item através de sua chave</span>
+            <img src="imagens/Captura de Tela (43).png" alt="exemplo" class="if">
+            <span class="ex2">Excluindo o ultimo item do dicionário</span>
+            <img src="imagens/Captura de Tela (44).png" alt="exemplo" class="if">
+            <span class="ex2">Exibindo o valor de uma chave específica</span>
+            <img src="imagens/Captura de Tela (45).png" alt="exemplo" class="if">
+            <span class="ex2">Limpando o dicionário</span>
+            <img src="imagens/Captura de Tela (46).png" alt="exemplo" class="if">
+        </section>
+        <p>
+            Com isso nós terminamos a parte de estrutura de dados. Mas tenha em mente que o apresentado
+            aqui não são todas as possibilidades que temos com cada tipo de dado, isso é algo que você ira
+            entender melhor quando estiver de fato programando. Para falar a verdade, ainda existe outro tipo
+            mas esse não será abordado aqui, o objeto. Não abordaremos por se tratar de uma estrutura mais avançada
+            o que não é o foco de um guia introdutório.
+        </p>
+        <h2>Tratamentos de erros</h2>
+        <p>
+            Algo bastante comum dentro da programação são os erros. Os erros e bugs estão presentes no
+            cotidiano de todos os programadores. No python, temos uma estrutura aprópriada para tratar 
+            erros e bugs, ela é composta de <span>try</span>(caso ocorra tudo bem) e <span>except</span>(caso ocorra um erro).
+            A primeira vista, ela se parece um pouco com o <span>if</span> e <span>else</span>, mas essa estrutura serve
+            apenas para tratamento de erros. vejá alguns exemplos.
+        </p>
+        <section id="for">
+            <span class="ex">Exemplos</span>
+            <table class="for">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="imagens/Captura de Tela (47).png" alt="exemplo" class="if">
+                        </td>
+                        <td>
+                            Aqui nós usamos a estrutura <span>try</span> para definir o que queremos no nosso código.
+                            Temos uma variável <span>texto</span> que tem o valor do tipo string "20"; a variável <span>numero</span>
+                            faz a conversão do valor contido na variável <span>texto</span> para o tipo numerico <span>int</span>; em seguida
+                            nós pedimos para que fosse exibido o valor da variável <span>numero</span>. Caso houvesse algum erro na execução
+                            da estrutura <span>try</span>, seria exibido "algo deu errado", pois é o que pedimos para fazer caso houvesse erro(except)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="imagens/Captura de Tela (48).png" alt="exemplo" class="if">
+                        </td>
+                        <td>
+                            Este exemplo condiz melhor com o que foi dito no anterior, aqui temos a variável
+                            <span>texto</span> que tem o valor "salada"; a variável <span>numero</span> tenta fazer 
+                            a conversão de <span>str</span> par <span>int</span> porém ela falha pois não existem letras
+                            no tipo inteiro, apenas números. Logo o programa faz o que está contido na estrutura <span>except</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="imagens/Captura de Tela (49).png" alt="exemplo" class="if">
+
+                        </td>
+                        <td>
+                            Também é possível definir o tipo específico de erro que queremos corrigir ou tratar.
+                            Quando usamos o <span>Execption</span> após o <span>except</span>, estamos querendo tratar a exceção em si,
+                            normalmente o <span>Execption</span> é usado para saber o que exatamente está errado no código.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="imagens/Captura de Tela (50).png" alt="exemplo" class="if">
+                        </td>
+                        <td>
+                            Aqui temos uma lista com 3 elementos, pedimos para que fosse exibido o elementode indíce 3
+                            mas a lista só vai até o indíce 2, o que significa que temos um erro de indíce, então podemos 
+                            trata-lo de forma individual na estrutura <span>except</span>. Caso o erro fosse de outro tipo, 
+                            a nossa exeção não funcionaria pois ela é exclusiva para o tipo <span>IndexError</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <p>
+            Agora que você entende mais ou menos como funcionam os tratamentos de erro, tente praticar
+            por conta própria e ver outros tipos de erros.
+        </p>
+        <h2>
+            Bibliotecas
+        </h2>
+        <p>
+            Chegamos ao ultimo ponto deste guia, as bibliotecas ou <span>libs</span>, as libs são conjuntos de códigos 
+            externos que outras pessoas desenvolveram e disponibilizaram para uso da comunidade do python. O proprio python
+            já vem com algumas libs instaladas, mas para instalar outras libs, basta usar o comando <span>pip install {nome da biblioteca}</span> no
+            seu terminal.
+        </p>
+        <section>
+            <span class="ex">Exemplo</span>
+                <img src="imagens/Captura de Tela (51).png" alt="exemplo" class="if">
+                <p>
+                    Lembre-se que é necessário ter o python instalado corretamente para isso.
+                </p>
+        </section>
+        <p>
+            Aqui instalamos a lib <span>tk</span> usada para a criação de interfaces gráficas no python. Existem outras
+            bibliotecas capazes de criar interfaces, ou melhor, no geral existem mais de uma biblioteca que servem para
+            as mesmas funções, mas vai de cada um saber qual é a melhor para o uso de seu projeto.
+        </p>
+        <p>
+            Para usar uma biblioteca, é necessário importa-la para o código antes com o comando <span>import</span>
+        </p>
+        <section>
+        <span class="ex">Exemplo</span>
+            <img src="imagens/Captura de Tela (53).png" alt="exemplo" class="if">
+            <p>
+                A biblioteca <span>os</span> possui funcionalidades que permitem a interação do nosso
+                código com o sitema operacional. Com isso podemos criar pastas, remover arquivos entre outras
+                funções...
+            </p>
+    </section>
+    <p>
+        Com isso concluimos a nossa introdução à linguagem python, pratique de forma mais rigida o que 
+        foi visto aqui sempre que puder. Boa sorte.
+    </p>
+    </main> 
+    <footer>
+        <section>
+            <table>
+            <thead>
+                <tr>
+                    <th>Bibliotecas</th>
+                    <th>Funcionalidades</th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tk</td>
+                    <td class="td">Criar interfaces gráficas</td>
+                </tr>
+                <tr>
+                    <td>Math</td>
+                    <td class="td">Realizar operações matemáticas</td>
+                </tr>
+                <tr>
+                    <td>Pandas</td>
+                    <td class="td">Usada para realizar análise de dados</td>
+                </tr>
+                <tr>
+                    <td>Cv</td>
+                    <td class="td">Usada para criar interações com imagens, podendo usar a câmera do dispositivo</td>
+                </tr>
+                <tr>
+                    <td>TensorFlow</td>
+                    <td class="td">Usada para criação de inteligências artifíciais</td>
+                </tr>
+                <tr>
+                    <td>Aut-py-to-exe</td>
+                    <td class="td">Usada para converter um arquivo .py para um arquivo executável</td>
+                </tr>
+                <tr>
+                    <td>Pymunk</td>
+                    <td>Usada para criar colisões 2d</td>
+                </tr>
+            </tbody>
+            </table>
+        </section>
+    </footer>
+</body>
+</html>
